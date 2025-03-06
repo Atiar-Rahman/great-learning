@@ -1,0 +1,58 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/favicon.png';
+import { IoMenu } from "react-icons/io5";
+
+const Navbar = () => {
+    const links = <>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/'}>Home</NavLink>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/about'}>About Us</NavLink>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/contact'}>Contact</NavLink>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/courses'}>Courses</NavLink>
+
+    </>
+    return (
+        <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <IoMenu className='text-2xl font-bold'></IoMenu>
+                    </div>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        {links}
+                    </ul>
+                </div>
+                <div className='flex justify-center items-center'>
+                    <img src={logo} alt="" />
+                    <a className="btn btn-ghost text-xl">Great Learning</a>
+                </div>
+            </div>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal px-1">
+                    {links}
+                </ul>
+            </div>
+            <div className="navbar-end">
+                <div className='mr-4 btn btn-outline'>
+                    <button>Login</button>
+                </div>
+                <div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="m-1"><div className="avatar">
+                        <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
+                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div></div>
+                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
+                        <li><a>Item 1</a></li>
+                        <li><a>Item 2</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+export default Navbar;
