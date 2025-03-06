@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import { IoMenu } from "react-icons/io5";
+import AuthContext from '../context/AuthContext/AuthContext';
 
 const Navbar = () => {
+    const { user,logOut } = useContext(AuthContext);
+
+    const handleSignout=e=>{
+        e.preventDefault;
+        logOut()
+        .then(()=>{
+
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
+
+
     const links = <>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/'}>Home</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/about'}>About Us</NavLink>
@@ -17,7 +32,7 @@ const Navbar = () => {
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                    <IoMenu className='text-2xl font-bold'></IoMenu>
+                        <IoMenu className='text-2xl font-bold'></IoMenu>
                     </div>
                     <ul
                         tabIndex={0}
@@ -37,7 +52,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className='mr-4 btn btn-outline'>
-                    <button><NavLink to={'/auth/login'}>Login</NavLink></button>
+                    {
+                        user ? <>
+                            <button onClick={handleSignout}>SignOut</button>
+                        </> : <>
+                            <button><NavLink to={'/auth/login'}>Login</NavLink></button>
+                        </>
+                    }
+
                 </div>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="m-1"><div className="avatar">

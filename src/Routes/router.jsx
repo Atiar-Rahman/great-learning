@@ -8,7 +8,6 @@ import Contact from '../pages/Contact/Contact';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import MainLayout from '../layout/MainLayout';
 import Login from '../pages/Login/Login';
-import Register from '../pages/Register/Register';
 import AuthLayout from '../layout/AuthLayout';
 import Dashboard from '../layout/Dashboard';
 import StudentDashBoard from '../pages/StudentDashboard.jsx/StudentDashBoard';
@@ -16,6 +15,7 @@ import MyClass from '../pages/MyClass/MyClass';
 import BlogLayout from '../layout/BlogLayout';
 import Blog from '../pages/Blog/Blog';
 import AdminDashBoard from '../pages/AdminDashBoard/AdminDashBoard';
+import Register from '../pages/Register/Register';
 
 const router = createBrowserRouter([
     {
