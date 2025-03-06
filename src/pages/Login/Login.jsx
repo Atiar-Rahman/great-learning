@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import Lottie from 'lottie-react';
 import loginLottieData from '../../assets/Lottie/loginLottieDate.json';
+import SocialLogin from '../../shared/SocialLogin';
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const handleSignIn = e =>{
@@ -31,8 +32,9 @@ const Login = () => {
                         <input type="password" className='w-full my-4 p-2' name="password" placeholder='password' id="" />
                         <input type="submit" className='btn btn-outline bg-amber-400 w-full text-black font-bold' value="login" />
                     </form>
+                    <div className='divider'>OR</div>
+                    <SocialLogin></SocialLogin>
                     <div>
-                        <button className='btn btn-outline w-full  bg-amber-400 my-2 text-black'>Google</button>
                         <p className='text-center'>Don't have an account? please <NavLink to='/auth/register' className='font-bold text-blue-400'>Register</NavLink></p>
                     </div>
                 </div>
