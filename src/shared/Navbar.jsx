@@ -9,6 +9,7 @@ const Navbar = () => {
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/about'}>About Us</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/contact'}>Contact</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/courses'}>Courses</NavLink>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/myclass'}>My Classes</NavLink>
 
     </>
     return (
@@ -36,7 +37,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className='mr-4 btn btn-outline'>
-                    <button>Login</button>
+                    <button><NavLink to={'/auth/login'}>Login</NavLink></button>
                 </div>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="m-1"><div className="avatar">
@@ -45,8 +46,8 @@ const Navbar = () => {
                         </div>
                     </div></div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                        <li><NavLink to={'/dashboard/student'}>DashBoard</NavLink></li>
+                        <li><NavLink to={'/blog'}>Blog tutorial</NavLink></li>
                     </ul>
                 </div>
 
