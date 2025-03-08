@@ -16,6 +16,7 @@ import BlogLayout from '../layout/BlogLayout';
 import Blog from '../pages/Blog/Blog';
 import AdminDashBoard from '../pages/AdminDashBoard/AdminDashBoard';
 import Register from '../pages/Register/Register';
+import Team from '../pages/Team/Team';
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path:'/myclass',
                 element:<MyClass></MyClass>
+            },
+            {
+                path:'/team',
+                element:<Team></Team>
             }
             
         ]
