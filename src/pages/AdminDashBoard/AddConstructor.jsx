@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddConstructor = () => {
+    const [file,setFile] = useState([]);
+    
+        const handleFileUpload =async(e)=>{
+            const file = e.target.files[0];
+            if(!file)return;
+    
+            const data = new FormData();
+            data.append('file',file)
+            data.append('upload_preset','first_time_cloudinary')
+            data.append('cloud_name','dmtdihivi')
+            const res = await fetch('https://api.cloudinary.com/v1_1/dmtdihivi/image/upload',{
+                method:"POST",
+                body:data
+            })
+            const UploadedImageURL = await res.json();
+            setFile(UploadedImageURL.url)
+        }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
@@ -19,7 +36,7 @@ const AddConstructor = () => {
                             </div>
                             <div>
                                 <textarea name="" className='input h-52 my-2' placeholder='Course description' id=""></textarea>
-                                <input type="file" className="file-input file-input-success" />
+                                <input onChange={handleFileUpload} type="file" className="file-input file-input-success" />
                             </div>
                         </div>
 
