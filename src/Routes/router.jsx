@@ -21,6 +21,8 @@ import AddCourse from '../pages/AdminDashBoard/AddCourse';
 import StudentDashBoard from '../layout/StudentDashBoard';
 import AdminDashBoard from '../layout/AdminDashBoard';
 import Profile from '../pages/StudentDashboard.jsx/Profile';
+import AddConstructor from '../pages/AdminDashBoard/AddConstructor';
+import WelCome from '../components/WelCome';
 
 
 const router = createBrowserRouter([
@@ -78,6 +80,10 @@ const router = createBrowserRouter([
         errorElement:<NotFound></NotFound>,
         children:[
             {
+                path:'/dashboard/student',
+                element:<WelCome user={'User'}></WelCome>
+            },
+            {
                 path:'/dashboard/student/profile',
                 element:<Profile></Profile>
             }
@@ -89,8 +95,16 @@ const router = createBrowserRouter([
         errorElement:<NotFound></NotFound>,
         children:[
             {
+                path:'/dashboard/admin',
+                element:<WelCome user={'Admin'}></WelCome>
+            },
+            {
                 path:'/dashboard/admin/addcource',
                 element:<AddCourse></AddCourse>
+            },
+            {
+                path:'/dashboard/admin/addconstructor',
+                element:<AddConstructor></AddConstructor>
             }
         ]
     },
