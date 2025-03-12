@@ -26,6 +26,7 @@ const Navbar = () => {
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/courses'}>Courses</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/myclass'}>My Classes</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/team'}>Show instructor</NavLink>
+        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/dashboard/student'}>Dashbord</NavLink>
 
     </>
     return (

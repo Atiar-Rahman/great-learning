@@ -9,14 +9,19 @@ import AboutUs from '../pages/AboutUs/AboutUs';
 import MainLayout from '../layout/MainLayout';
 import Login from '../pages/Login/Login';
 import AuthLayout from '../layout/AuthLayout';
-import Dashboard from '../layout/Dashboard';
-import StudentDashBoard from '../pages/StudentDashboard.jsx/StudentDashBoard';
+
+
 import MyClass from '../pages/MyClass/MyClass';
 import BlogLayout from '../layout/BlogLayout';
 import Blog from '../pages/Blog/Blog';
-import AdminDashBoard from '../pages/AdminDashBoard/AdminDashBoard';
+
 import Register from '../pages/Register/Register';
 import Team from '../pages/Team/Team';
+import AddCourse from '../pages/AdminDashBoard/AddCourse';
+import StudentDashBoard from '../layout/StudentDashBoard';
+import AdminDashBoard from '../layout/AdminDashBoard';
+import Profile from '../pages/StudentDashboard.jsx/Profile';
+
 
 const router = createBrowserRouter([
     {
@@ -68,17 +73,24 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        path:'/dashboard/student',
+        element:<StudentDashBoard></StudentDashBoard>,
         errorElement:<NotFound></NotFound>,
         children:[
             {
-                path:'/dashboard/student',
-                element:<StudentDashBoard></StudentDashBoard>
-            },
+                path:'/dashboard/student/profile',
+                element:<Profile></Profile>
+            }
+        ]
+    },
+    {
+        path:'/dashboard/admin',
+        element:<AdminDashBoard></AdminDashBoard>,
+        errorElement:<NotFound></NotFound>,
+        children:[
             {
-                path:'/dashboard/admin',
-                element:<AdminDashBoard></AdminDashBoard>
+                path:'/dashboard/admin/addcource',
+                element:<AddCourse></AddCourse>
             }
         ]
     },
