@@ -25,6 +25,7 @@ import AddConstructor from '../pages/AdminDashBoard/AddConstructor';
 import ShowAllCourse from '../pages/AdminDashBoard/ShowAllCourse';
 import ShowAllInstructor from '../pages/AdminDashBoard/ShowAllInstructor';
 import WelCome from '../components/WelCome';
+import CourseDetails from '../pages/CourseDetails/CourseDetails';
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
             {
                 path:'/team',
                 element:<Team></Team>
+            },
+            {
+                path:'/course/:id',
+                element:<CourseDetails></CourseDetails>,
+                loader:({params})=>fetch(`http://localhost:3000/course/${params.id}`)
             }
             
         ]
