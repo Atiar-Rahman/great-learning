@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const AddConstructor = () => {
     const [file, setFile] = useState('');
@@ -32,7 +33,7 @@ const AddConstructor = () => {
             setFile(uploadedImage.url);
             setImagePreview(URL.createObjectURL(selectedFile)); // Show preview
         } catch (err) {
-            setError('Failed to upload image. Please try again.',err);
+            setError('Failed to upload image. Please try again.', err);
         }
     };
 
@@ -53,14 +54,33 @@ const AddConstructor = () => {
 
         // Submit form data
         console.log(name, experience, instructor_type, education, description, file);
+        const instructorData = { name, experience, instructor_type, education, description, file };
         setError(''); // Clear error after successful form submission
+
+        fetch('http://localhost:3000/instructor', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(instructorData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Successfull add instructor info!",
+                        icon: "success",
+                        draggable: true
+                    });
+                }
+            })
     };
 
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
                 <div className="card-body border-4 border-green-400 rounded-4xl">
-                    <h1 className='text-2xl font-bold border-b text-center my-10'>Add Constructor Information</h1>
+                    <h1 className='text-2xl font-bold border-b text-center my-10'>Add Instructor Information</h1>
                     <form className='text-center' onSubmit={handleSubmit}>
                         <div className='grid grid-cols-1 md:grid-cols-2'>
                             <div>

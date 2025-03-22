@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const AddCourse = () => {
     const [file, setFile] = useState('');
@@ -32,7 +33,7 @@ const AddCourse = () => {
             setFile(uploadedImage.url);
             setImagePreview(URL.createObjectURL(selectedFile)); // Show preview
         } catch (err) {
-            setError('Failed to upload image. Please try again.',err);
+            setError('Failed to upload image. Please try again.', err);
         }
     };
 
@@ -70,7 +71,7 @@ const AddCourse = () => {
         }
 
         // Submit form data
-        console.log({
+        const courseData = {
             title,
             duration,
             instructorName,
@@ -80,9 +81,28 @@ const AddCourse = () => {
             rating,
             description,
             file,
-        });
+        }
+
 
         setError(''); // Clear error after successful form submission
+
+        fetch('http://localhost:3000/course', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(courseData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Successfull add course!",
+                        icon: "success",
+                        draggable: true
+                    });
+                }
+            })
     };
 
     return (

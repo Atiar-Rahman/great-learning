@@ -18,7 +18,7 @@ const AdminDashBoard = () => {
                             {/* Sidebar content here */}
                             <li><Link to={'/dashboard/admin'}><MdAddToPhotos />Home</Link></li>
                             <li><Link to={'/dashboard/admin/addcource'}><MdAddToPhotos />add cource</Link></li>
-                            <li><Link to={'/dashboard/admin/addconstructor'}><MdAddToPhotos />Add Constructor</Link></li>
+                            <li><Link to={'/dashboard/admin/addconstructor'}><MdAddToPhotos />Add Instructor</Link></li>
                         </ul>
                     </div>
                 </div>
