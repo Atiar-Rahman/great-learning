@@ -22,6 +22,8 @@ import StudentDashBoard from '../layout/StudentDashBoard';
 import AdminDashBoard from '../layout/AdminDashBoard';
 import Profile from '../pages/StudentDashboard.jsx/Profile';
 import AddConstructor from '../pages/AdminDashBoard/AddConstructor';
+import ShowAllCourse from '../pages/AdminDashBoard/ShowAllCourse';
+import ShowAllInstructor from '../pages/AdminDashBoard/ShowAllInstructor';
 import WelCome from '../components/WelCome';
 
 
@@ -105,6 +107,14 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/admin/addconstructor',
                 element:<AddConstructor></AddConstructor>
+            },
+            {
+                path:'/dashboard/admin/showcourses',
+                element:<ShowAllCourse></ShowAllCourse>
+            },
+            {
+                path:'/dashboard/admin/showinstructors',
+                element:<ShowAllInstructor></ShowAllInstructor>
             }
         ]
     },
