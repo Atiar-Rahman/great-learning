@@ -26,6 +26,8 @@ import ShowAllCourse from '../pages/AdminDashBoard/ShowAllCourse';
 import ShowAllInstructor from '../pages/AdminDashBoard/ShowAllInstructor';
 import WelCome from '../components/WelCome';
 import CourseDetails from '../pages/CourseDetails/CourseDetails';
+import PrivateRoutes from './PrivateRoutes';
+import EnrollCourse from '../pages/EnrollCourse/EnrollCourse';
 
 
 const router = createBrowserRouter([
@@ -61,7 +63,12 @@ const router = createBrowserRouter([
             },
             {
                 path:'/course/:id',
-                element:<CourseDetails></CourseDetails>,
+                element:<PrivateRoutes><CourseDetails></CourseDetails></PrivateRoutes>,
+                loader:({params})=>fetch(`http://localhost:3000/course/${params.id}`)
+            },
+            {
+                path:'/courseenroll/:id',
+                element:<PrivateRoutes><EnrollCourse></EnrollCourse></PrivateRoutes>,
                 loader:({params})=>fetch(`http://localhost:3000/course/${params.id}`)
             }
             
@@ -89,7 +96,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard/student',
-                element:<WelCome user={'User'}></WelCome>
+                element:<PrivateRoutes><WelCome user={'User'}></WelCome></PrivateRoutes>
             },
             {
                 path:'/dashboard/student/profile',
