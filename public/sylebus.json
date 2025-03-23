@@ -1,0 +1,96 @@
+[
+    {
+      "title": "Artificial Intelligence",
+      "description": "Learn the fundamentals of AI, machine learning, deep learning, and more.",
+      "syllabus": [
+        "1. Introduction to Artificial Intelligence",
+        "2. Types of AI",
+        "3. Basic Concepts in Machine Learning",
+        "4. Supervised and Unsupervised Learning",
+        "5. Neural Networks and Deep Learning",
+        "6. Natural Language Processing (NLP)",
+        "7. AI in Robotics",
+        "8. AI in Healthcare",
+        "9. AI Ethics and Future Trends"
+      ]
+    },
+    {
+      "title": "Data Science",
+      "description": "Learn how to work with data, analyze it, and derive meaningful insights using various tools.",
+      "syllabus": [
+        "1. Introduction to Data Science",
+        "2. Data Collection and Cleaning",
+        "3. Exploratory Data Analysis",
+        "4. Statistical Methods in Data Science",
+        "5. Data Visualization",
+        "6. Machine Learning Algorithms",
+        "7. Big Data Tools and Frameworks",
+        "8. Data Science in Business",
+        "9. Ethics in Data Science"
+     ]
+    },
+    {
+      "title": "Web Development",
+      "description": "Master the art of building websites using HTML, CSS, JavaScript, and modern frameworks.",
+      "syllabus": [
+        "1. Introduction to Web Development",
+        "2. HTML Basics",
+        "3. CSS Fundamentals",
+        "4. Responsive Web Design",
+        "5. JavaScript and DOM Manipulation",
+        "6. Frontend Frameworks (React, Vue, etc.)",
+        "7. Backend Development (Node.js, Express)",
+        "8. Databases and SQL",
+        "9. Web Security Best Practices",
+        "10. Deploying Websites"
+      ]
+    },
+    {
+      "title": "App Development",
+      "description": "Learn how to build mobile applications for iOS and Android using popular frameworks.",
+      "syllabus": [
+        "1. Introduction to Mobile App Development",
+        "2. UI/UX Design Principles",
+        "3. Developing with Flutter",
+        "4. iOS Development with Swift",
+        "5. Android Development with Kotlin",
+        "6. Building APIs for Mobile Apps",
+        "7. Integrating Databases with Mobile Apps",
+        "8. Testing Mobile Applications",
+        "9. App Store Submission and Deployment",
+        "10. Advanced Topics in Mobile Development"
+      ]
+    },
+    {
+      "title": "UI/UX Design",
+      "description": "Learn the principles and practices of designing intuitive and engaging user interfaces and experiences.",
+      "syllabus": [
+        "1. Introduction to UI/UX Design",
+        "2. User Research and Personas",
+        "3. Wireframing and Prototyping",
+        "4. Design Thinking Process",
+        "5. Visual Design Principles",
+        "6. UI Patterns and Components",
+        "7. Usability Testing",
+        "8. Responsive Design",
+        "9. UX Writing and Microinteractions",
+        "10. UI/UX Design Tools (Figma, Sketch, Adobe XD)"
+      ]
+    },
+    {
+      "title": "Programming Fundamentals (Data Structures and Algorithms)",
+      "description": "Build a strong foundation in programming by learning essential data structures and algorithms.",
+      "syllabus": [
+        "1. Introduction to Programming",
+        "2. Basic Data Types and Operators",
+        "3. Arrays and Strings",
+        "4. Linked Lists",
+        "5. Stacks and Queues",
+        "6. Trees (Binary Tree, Binary Search Tree)",
+        "7. Graphs (BFS, DFS)",
+        "8. Sorting Algorithms (Quick Sort, Merge Sort, etc.)",
+        "9. Searching Algorithms (Binary Search, Linear Search)",
+        "10. Algorithm Complexity (Big O Notation)"
+      ]
+    }
+  ]
