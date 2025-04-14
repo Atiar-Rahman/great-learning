@@ -1,8 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
+import url from '../url'
 const Instructor = ({ instructor }) => {
-    console.log(instructor)
+    // console.log(instructor)
+
+     const handleDelete = _id => {
+            console.log(_id)
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`${url}/instructor/${_id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            // console.log(data)
+                            if (data.deletedCount>0) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your Course has been deleted.",
+                                    icon: "success"
+                                });
+                            }
+                        })
+                }
+            });
+        }
     return (
         <div>
             <div className="overflow-x-auto">
@@ -38,8 +69,8 @@ const Instructor = ({ instructor }) => {
                                 <button className="btn btn-ghost btn-xs">{instructor.experience}</button>
                             </th>
                             <td>
-                                <Link className='btn btn-outline my-2 px-5 lg:mx-3'>Update</Link>
-                                <Link className='btn btn-outline px-6'>delete</Link>
+                                <Link to={`/dashboard/admin/updateinstructor/${instructor._id}`} className='btn btn-outline my-2 px-5 lg:mx-3'>Update</Link>
+                                <Link onClick={()=>handleDelete(instructor._id)} className='btn btn-outline px-6'>delete</Link>
                             </td>
                         </tr>
                     </tbody>

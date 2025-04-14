@@ -28,6 +28,9 @@ import WelCome from '../components/WelCome';
 import CourseDetails from '../pages/CourseDetails/CourseDetails';
 import PrivateRoutes from './PrivateRoutes';
 import EnrollCourse from '../pages/EnrollCourse/EnrollCourse';
+import UpdateCourse from '../pages/AdminDashBoard/UpdateCourse';
+import url from '../url';
+import UpdateInstructor from '../pages/AdminDashBoard/UpdateInstructor';
 
 
 const router = createBrowserRouter([
@@ -118,8 +121,18 @@ const router = createBrowserRouter([
                 element:<AddCourse></AddCourse>
             },
             {
+                path:'/dashboard/admin/updatecourse/:id',
+                element:<UpdateCourse></UpdateCourse>,
+                loader:({params})=>fetch(`${url}/course/${params.id}`)
+            },
+            {
                 path:'/dashboard/admin/addconstructor',
                 element:<AddConstructor></AddConstructor>
+            },
+            {
+                path:'/dashboard/admin/updateinstructor/:id',
+                element:<UpdateInstructor></UpdateInstructor>,
+                loader:({params})=>fetch(`${url}/instructor/${params.id}`)
             },
             {
                 path:'/dashboard/admin/showcourses',

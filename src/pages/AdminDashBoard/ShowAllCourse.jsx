@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Course from '../../components/Course';
-
+import url from '../../url'
 const ShowAllCourse = () => {
     const [courses,setCourses] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/course')
+        fetch(`${url}/course`)
         .then(res=>res.json())
         .then(data=>{
             setCourses(data)

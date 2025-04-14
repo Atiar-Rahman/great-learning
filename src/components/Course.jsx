@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import url from '../url';
 
 const Course = ({ course }) => {
     // console.log(course)
@@ -16,7 +17,7 @@ const Course = ({ course }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/course/${_id}`, {
+                fetch(`${url}/course/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -43,7 +44,7 @@ const Course = ({ course }) => {
                         <td>{course.duration}</td>
                         <td>{course.instructorName}</td>
                         <td>{course.money}</td>
-                        <td><Link className='btn btn-outline'>Update</Link></td>
+                        <td><Link to={`/dashboard/admin/updatecourse/${course._id}`} className='btn btn-outline'>Update</Link></td>
                         <td><Link onClick={() => handleDelete(course._id)} className='btn btn-outline'>delete</Link></td>
 
                     </tr>
