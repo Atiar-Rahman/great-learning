@@ -38,12 +38,8 @@ const Instructor = ({ instructor }) => {
         <div>
             <div className="overflow-x-auto">
                 <table className="table text-center">
-                    {/* head */}
-                    
                     <tbody>
-                        
                         <tr>
-                            
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="avatar">
@@ -65,9 +61,9 @@ const Instructor = ({ instructor }) => {
                                 <span className="badge badge-ghost badge-sm">{instructor.education}</span>
                             </td>
                             <td>{instructor.description}</td>
-                            <th>
+                            <td>
                                 <button className="btn btn-ghost btn-xs">{instructor.experience}</button>
-                            </th>
+                            </td>
                             <td>
                                 <Link to={`/dashboard/admin/updateinstructor/${instructor._id}`} className='btn btn-outline my-2 px-5 lg:mx-3'>Update</Link>
                                 <Link onClick={()=>handleDelete(instructor._id)} className='btn btn-outline px-6'>delete</Link>

@@ -1,12 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Instructor from './Instructor';
+import url from '../../url';
 
 const Instructors = () => {
     const [instructors,setInstructors] = useState([]);
     
     useEffect(()=>{
-        fetch('../../../public/instructor.json')
+        fetch(`${url}/instructor`)
         .then(res=>res.json())
         .then(data=>setInstructors(data))
     },[])

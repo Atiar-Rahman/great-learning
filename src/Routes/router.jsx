@@ -31,6 +31,8 @@ import EnrollCourse from '../pages/EnrollCourse/EnrollCourse';
 import UpdateCourse from '../pages/AdminDashBoard/UpdateCourse';
 import url from '../url';
 import UpdateInstructor from '../pages/AdminDashBoard/UpdateInstructor';
+import InstructorDetails from '../pages/Team/InstructorDetails';
+import ContactInfos from '../pages/AdminDashBoard/ContactInfos';
 
 
 const router = createBrowserRouter([
@@ -65,14 +67,19 @@ const router = createBrowserRouter([
                 element:<Team></Team>
             },
             {
+                path:'/team/:id',
+                element:<InstructorDetails></InstructorDetails>,
+                loader:({params})=>fetch(`${url}/instructor/${params.id}`)
+            },
+            {
                 path:'/course/:id',
                 element:<PrivateRoutes><CourseDetails></CourseDetails></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:3000/course/${params.id}`)
+                loader:({params})=>fetch(`${url}/course/${params.id}`)
             },
             {
                 path:'/courseenroll/:id',
                 element:<PrivateRoutes><EnrollCourse></EnrollCourse></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:3000/course/${params.id}`)
+                loader:({params})=>fetch(`${url}/course/${params.id}`)
             }
             
         ]
@@ -141,6 +148,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/admin/showinstructors',
                 element:<ShowAllInstructor></ShowAllInstructor>
+            },
+            {
+                path:'/dashboard/admin/contactinfo',
+                element:<ContactInfos></ContactInfos>
             }
         ]
     },

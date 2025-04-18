@@ -21,6 +21,7 @@ const AdminDashBoard = () => {
                             <li><Link to={'/dashboard/admin/addconstructor'}><MdAddToPhotos />Add Instructor</Link></li>
                             <li><Link to={'/dashboard/admin/showcourses'}><MdAddToPhotos />Show all courses</Link></li>
                             <li><Link to={'/dashboard/admin/showinstructors'}><MdAddToPhotos />Show all instructors</Link></li>
+                            <li><Link to={'/dashboard/admin/contactinfo'}><MdAddToPhotos />ContactInfo</Link></li>
                         </ul>
                     </div>
                 </div>
