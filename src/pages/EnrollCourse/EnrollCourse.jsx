@@ -36,7 +36,7 @@ const course = useLoaderData();
     .then(res=>res.json())
     .then(data=>{
       window.location.replace(data.url);
-      console.log(data)
+      // console.log(data)
     })
   };
 
@@ -56,7 +56,7 @@ const course = useLoaderData();
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Course Details</h2>
             <p className="text-lg text-gray-700 mb-4">{course.description}</p>
             <div className="flex justify-between items-center mb-4">
-              <span className="text-blue-600 font-semibold text-lg">${course.price}</span>
+              <span className="text-blue-600 font-semibold text-lg">${course.money}</span>
               <span className="text-gray-600">Duration: {course.duration} hours</span>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import { IoMenu } from "react-icons/io5";
 import AuthContext from '../context/AuthContext/AuthContext';
+import Setting from '../components/Setting';
 
 const Navbar = () => {
     const { user,logOut } = useContext(AuthContext);
@@ -74,6 +75,9 @@ const Navbar = () => {
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
                         <li><NavLink to={'/dashboard/student'}>DashBoard</NavLink></li>
                         <li><NavLink to={'/blog'}>Blog tutorial</NavLink></li>
+                        <li><NavLink to={'/setting'}>Setting</NavLink></li>
+                        <Setting></Setting>
+                        
                     </ul>
                 </div>
 
