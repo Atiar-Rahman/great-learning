@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StarRating from './StarRating';
 
 const Category = ({ category }) => {
     console.log(category)
@@ -15,7 +16,7 @@ const Category = ({ category }) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{title}</h2>
-                    <p>{rating}</p>
+                    <p><StarRating rating={rating}></StarRating></p>
                 </div>
             </div>
         </Link>
