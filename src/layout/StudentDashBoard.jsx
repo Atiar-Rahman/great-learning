@@ -15,7 +15,7 @@ const StudentDashBoard = () => {
     }
         return (
         <div className='grid grid-cols-12 gap-20'>
-            <div>
+            <div className='grid grid-cols-2'>
                 <div className="drawer">
                     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
@@ -33,7 +33,7 @@ const StudentDashBoard = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='grid '>
                 <Outlet></Outlet>
             </div>
         </div>
