@@ -1,0 +1,402 @@
+[
+  {
+    "question": "What is the output of print(1)?",
+    "answer": "The output is 1."
+  },
+  {
+    "question": "How do you define a function in Python?",
+    "answer": "Using the def keyword, e.g., def my_function():"
+  },
+  {
+    "question": "What is the file extension for Python files?",
+    "answer": ".py"
+  },
+  {
+    "question": "How do you write a comment in Python?",
+    "answer": "Using the # symbol, e.g., # This is a comment"
+  },
+  {
+    "question": "How do you create a list in Python?",
+    "answer": "Using square brackets, e.g., my_list = [1, 2, 3]"
+  },
+  {
+    "question": "What keyword is used to create a class in Python?",
+    "answer": "class"
+  },
+  {
+    "question": "How do you create a variable x with value 7?",
+    "answer": "x = 7"
+  },
+  {
+    "question": "What function is used to get the type of a variable?",
+    "answer": "type()"
+  },
+  {
+    "question": "What is the result of len('9')?",
+    "answer": "The length is {length}."
+  },
+  {
+    "question": "How do you check if two variables are equal?",
+    "answer": "Using the == operator"
+  },
+  {
+    "question": "Which loop is used to iterate over a list?",
+    "answer": "for loop"
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "answer": "try"
+  },
+  {
+    "question": "What keyword is used to import a module?",
+    "answer": "import"
+  },
+  {
+    "question": "How do you convert a string '123' to an integer?",
+    "answer": "Using int('123')"
+  },
+  {
+    "question": "How do you convert a number to a string?",
+    "answer": "Using str(number)"
+  },
+  {
+    "question": "What is a dictionary in Python?",
+    "answer": "A collection of key-value pairs."
+  },
+  {
+    "question": "How do you access the first item of a list named my_list?",
+    "answer": "my_list[0]"
+  },
+  {
+    "question": "What is the index of the last item in a list of length n?",
+    "answer": "n - 1"
+  },
+  {
+    "question": "What is the use of the pass statement?",
+    "answer": "It is a null operation; nothing happens when it executes."
+  },
+  {
+    "question": "How do you define a lambda function?",
+    "answer": "Using the lambda keyword, e.g., lambda x: x + 1"
+  },
+  {
+    "question": "What is the output of print(1)?",
+    "answer": "The output is 1."
+  },
+  {
+    "question": "How do you define a function in Python?",
+    "answer": "Using the def keyword, e.g., def my_function():"
+  },
+  {
+    "question": "What is the file extension for Python files?",
+    "answer": ".py"
+  },
+  {
+    "question": "How do you write a comment in Python?",
+    "answer": "Using the # symbol, e.g., # This is a comment"
+  },
+  {
+    "question": "How do you create a list in Python?",
+    "answer": "Using square brackets, e.g., my_list = [1, 2, 3]"
+  },
+  {
+    "question": "What keyword is used to create a class in Python?",
+    "answer": "class"
+  },
+  {
+    "question": "How do you create a variable x with value 7?",
+    "answer": "x = 7"
+  },
+  {
+    "question": "What function is used to get the type of a variable?",
+    "answer": "type()"
+  },
+  {
+    "question": "What is the result of len('9')?",
+    "answer": "The length is {length}."
+  },
+  {
+    "question": "How do you check if two variables are equal?",
+    "answer": "Using the == operator"
+  },
+  {
+    "question": "Which loop is used to iterate over a list?",
+    "answer": "for loop"
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "answer": "try"
+  },
+  {
+    "question": "What keyword is used to import a module?",
+    "answer": "import"
+  },
+  {
+    "question": "How do you convert a string '123' to an integer?",
+    "answer": "Using int('123')"
+  },
+  {
+    "question": "How do you convert a number to a string?",
+    "answer": "Using str(number)"
+  },
+  {
+    "question": "What is a dictionary in Python?",
+    "answer": "A collection of key-value pairs."
+  },
+  {
+    "question": "How do you access the first item of a list named my_list?",
+    "answer": "my_list[0]"
+  },
+  {
+    "question": "What is the index of the last item in a list of length n?",
+    "answer": "n - 1"
+  },
+  {
+    "question": "What is the use of the pass statement?",
+    "answer": "It is a null operation; nothing happens when it executes."
+  },
+  {
+    "question": "How do you define a lambda function?",
+    "answer": "Using the lambda keyword, e.g., lambda x: x + 1"
+  },
+  {
+    "question": "What is the output of print(1)?",
+    "answer": "The output is 1."
+  },
+  {
+    "question": "How do you define a function in Python?",
+    "answer": "Using the def keyword, e.g., def my_function():"
+  },
+  {
+    "question": "What is the file extension for Python files?",
+    "answer": ".py"
+  },
+  {
+    "question": "How do you write a comment in Python?",
+    "answer": "Using the # symbol, e.g., # This is a comment"
+  },
+  {
+    "question": "How do you create a list in Python?",
+    "answer": "Using square brackets, e.g., my_list = [1, 2, 3]"
+  },
+  {
+    "question": "What keyword is used to create a class in Python?",
+    "answer": "class"
+  },
+  {
+    "question": "How do you create a variable x with value 7?",
+    "answer": "x = 7"
+  },
+  {
+    "question": "What function is used to get the type of a variable?",
+    "answer": "type()"
+  },
+  {
+    "question": "What is the result of len('9')?",
+    "answer": "The length is {length}."
+  },
+  {
+    "question": "How do you check if two variables are equal?",
+    "answer": "Using the == operator"
+  },
+  {
+    "question": "Which loop is used to iterate over a list?",
+    "answer": "for loop"
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "answer": "try"
+  },
+  {
+    "question": "What keyword is used to import a module?",
+    "answer": "import"
+  },
+  {
+    "question": "How do you convert a string '123' to an integer?",
+    "answer": "Using int('123')"
+  },
+  {
+    "question": "How do you convert a number to a string?",
+    "answer": "Using str(number)"
+  },
+  {
+    "question": "What is a dictionary in Python?",
+    "answer": "A collection of key-value pairs."
+  },
+  {
+    "question": "How do you access the first item of a list named my_list?",
+    "answer": "my_list[0]"
+  },
+  {
+    "question": "What is the index of the last item in a list of length n?",
+    "answer": "n - 1"
+  },
+  {
+    "question": "What is the use of the pass statement?",
+    "answer": "It is a null operation; nothing happens when it executes."
+  },
+  {
+    "question": "How do you define a lambda function?",
+    "answer": "Using the lambda keyword, e.g., lambda x: x + 1"
+  },
+  {
+    "question": "What is the output of print(1)?",
+    "answer": "The output is 1."
+  },
+  {
+    "question": "How do you define a function in Python?",
+    "answer": "Using the def keyword, e.g., def my_function():"
+  },
+  {
+    "question": "What is the file extension for Python files?",
+    "answer": ".py"
+  },
+  {
+    "question": "How do you write a comment in Python?",
+    "answer": "Using the # symbol, e.g., # This is a comment"
+  },
+  {
+    "question": "How do you create a list in Python?",
+    "answer": "Using square brackets, e.g., my_list = [1, 2, 3]"
+  },
+  {
+    "question": "What keyword is used to create a class in Python?",
+    "answer": "class"
+  },
+  {
+    "question": "How do you create a variable x with value 7?",
+    "answer": "x = 7"
+  },
+  {
+    "question": "What function is used to get the type of a variable?",
+    "answer": "type()"
+  },
+  {
+    "question": "What is the result of len('9')?",
+    "answer": "The length is {length}."
+  },
+  {
+    "question": "How do you check if two variables are equal?",
+    "answer": "Using the == operator"
+  },
+  {
+    "question": "Which loop is used to iterate over a list?",
+    "answer": "for loop"
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "answer": "try"
+  },
+  {
+    "question": "What keyword is used to import a module?",
+    "answer": "import"
+  },
+  {
+    "question": "How do you convert a string '123' to an integer?",
+    "answer": "Using int('123')"
+  },
+  {
+    "question": "How do you convert a number to a string?",
+    "answer": "Using str(number)"
+  },
+  {
+    "question": "What is a dictionary in Python?",
+    "answer": "A collection of key-value pairs."
+  },
+  {
+    "question": "How do you access the first item of a list named my_list?",
+    "answer": "my_list[0]"
+  },
+  {
+    "question": "What is the index of the last item in a list of length n?",
+    "answer": "n - 1"
+  },
+  {
+    "question": "What is the use of the pass statement?",
+    "answer": "It is a null operation; nothing happens when it executes."
+  },
+  {
+    "question": "How do you define a lambda function?",
+    "answer": "Using the lambda keyword, e.g., lambda x: x + 1"
+  },
+  {
+    "question": "What is the output of print(1)?",
+    "answer": "The output is 1."
+  },
+  {
+    "question": "How do you define a function in Python?",
+    "answer": "Using the def keyword, e.g., def my_function():"
+  },
+  {
+    "question": "What is the file extension for Python files?",
+    "answer": ".py"
+  },
+  {
+    "question": "How do you write a comment in Python?",
+    "answer": "Using the # symbol, e.g., # This is a comment"
+  },
+  {
+    "question": "How do you create a list in Python?",
+    "answer": "Using square brackets, e.g., my_list = [1, 2, 3]"
+  },
+  {
+    "question": "What keyword is used to create a class in Python?",
+    "answer": "class"
+  },
+  {
+    "question": "How do you create a variable x with value 7?",
+    "answer": "x = 7"
+  },
+  {
+    "question": "What function is used to get the type of a variable?",
+    "answer": "type()"
+  },
+  {
+    "question": "What is the result of len('9')?",
+    "answer": "The length is {length}."
+  },
+  {
+    "question": "How do you check if two variables are equal?",
+    "answer": "Using the == operator"
+  },
+  {
+    "question": "Which loop is used to iterate over a list?",
+    "answer": "for loop"
+  },
+  {
+    "question": "What keyword is used to handle exceptions?",
+    "answer": "try"
+  },
+  {
+    "question": "What keyword is used to import a module?",
+    "answer": "import"
+  },
+  {
+    "question": "How do you convert a string '123' to an integer?",
+    "answer": "Using int('123')"
+  },
+  {
+    "question": "How do you convert a number to a string?",
+    "answer": "Using str(number)"
+  },
+  {
+    "question": "What is a dictionary in Python?",
+    "answer": "A collection of key-value pairs."
+  },
+  {
+    "question": "How do you access the first item of a list named my_list?",
+    "answer": "my_list[0]"
+  },
+  {
+    "question": "What is the index of the last item in a list of length n?",
+    "answer": "n - 1"
+  },
+  {
+    "question": "What is the use of the pass statement?",
+    "answer": "It is a null operation; nothing happens when it executes."
+  },
+  {
+    "question": "How do you define a lambda function?",
+    "answer": "Using the lambda keyword, e.g., lambda x: x + 1"
+  }
+]

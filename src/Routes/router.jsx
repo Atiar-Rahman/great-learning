@@ -13,8 +13,6 @@ import AuthLayout from '../layout/AuthLayout';
 
 import MyClass from '../pages/MyClass/MyClass';
 import BlogLayout from '../layout/BlogLayout';
-import Blog from '../pages/Blog/Blog';
-
 import Register from '../pages/Register/Register';
 import Team from '../pages/Team/Team';
 import AddCourse from '../pages/AdminDashBoard/AddCourse';
@@ -36,6 +34,7 @@ import ContactInfos from '../pages/AdminDashBoard/ContactInfos';
 import PaymentSuccess from '../pages/Payment/PaymentSuccess';
 import PaymentFail from '../pages/Payment/PaymentFail';
 import ShowAllUsers from '../pages/AdminDashBoard/ShowAllUsers';
+import Blogs from '../pages/Blog/Blogs';
 
 
 const router = createBrowserRouter([
@@ -177,7 +176,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/blog',
-                element:<Blog></Blog>
+                element:<Blogs></Blogs>
             }
         ]
     }
