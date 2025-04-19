@@ -33,6 +33,8 @@ import url from '../url';
 import UpdateInstructor from '../pages/AdminDashBoard/UpdateInstructor';
 import InstructorDetails from '../pages/Team/InstructorDetails';
 import ContactInfos from '../pages/AdminDashBoard/ContactInfos';
+import PaymentSuccess from '../pages/Payment/PaymentSuccess';
+import PaymentFail from '../pages/Payment/PaymentFail';
 
 
 const router = createBrowserRouter([
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
             {
                 path:'/team',
                 element:<Team></Team>
+            },
+            {
+                path:'/payment/success/:tranId',
+                element:<PaymentSuccess></PaymentSuccess>
+            },
+            {
+                path:'/payment/fail/:tranId',
+                element:<PaymentFail></PaymentFail>
             },
             {
                 path:'/team/:id',

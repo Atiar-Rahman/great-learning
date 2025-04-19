@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import url from "../../url";
 
 const CourseEnroll = () => {
 const course = useLoaderData();
@@ -22,6 +23,21 @@ const course = useLoaderData();
     e.preventDefault();
     // Handle enrollment logic here (e.g., submit form data to the backend)
     alert("Enrollment successful!");
+    formData.courseId = course._id;
+    console.log(formData)
+
+    fetch(`${url}/enroll`,{
+      method:"POST",
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(formData)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      window.location.replace(data.url);
+      console.log(data)
+    })
   };
 
   return (
