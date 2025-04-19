@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const Footer = () => {
     return (
@@ -41,6 +42,7 @@ const Footer = () => {
             </div>
             <div className="footer sm:footer-horizontal footer-center bg-base-200 text-base-content p-4">
                 <aside>
+                    <Breadcrumbs></Breadcrumbs>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
                 </aside>
             </div>
