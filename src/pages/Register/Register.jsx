@@ -5,6 +5,8 @@ import AuthContext from '../../context/AuthContext/AuthContext';
 import registerLottieData from '../../assets/Lottie/registerLottieData.json';
 import Lottie from 'lottie-react';
 import SocialLogin from '../../shared/SocialLogin';
+import Swal from 'sweetalert2';
+import url from '../../url'
 const Register = () => {
     const {createUser} = useContext(AuthContext);
     const handleRegister=e=>{
@@ -14,10 +16,38 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         //password validation and show error message
-        console.log(email,password)
+        // console.log(email,password)
         createUser(email,password)
         .then(result=>{
-            console.log(result.user);
+            // console.log(result.user);
+            if(result.user.uid){
+                Swal.fire({
+                    title: "Register successfully",
+                    text: "Please Try Login",
+                    icon: "success"
+                });
+            }
+            const email = result.user.email
+            const lastSignInTime = result.user.metadata.lastSignInTime
+            const creationTime = result.user.metadata.creationTime
+            const photourl = result.user.photoURL;
+            const displayName = result.user.displayName;
+
+
+            const userData = {
+                email,lastSignInTime,creationTime,photourl,displayName
+            }
+            fetch(`${url}/users`,{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(userData)
+            })
+            .then(res => res.json())
+            .then(data=>{
+                console.log(data)
+            })
         })
         .catch(error=>{
             console.log(error);

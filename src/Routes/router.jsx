@@ -35,6 +35,7 @@ import InstructorDetails from '../pages/Team/InstructorDetails';
 import ContactInfos from '../pages/AdminDashBoard/ContactInfos';
 import PaymentSuccess from '../pages/Payment/PaymentSuccess';
 import PaymentFail from '../pages/Payment/PaymentFail';
+import ShowAllUsers from '../pages/AdminDashBoard/ShowAllUsers';
 
 
 const router = createBrowserRouter([
@@ -162,6 +163,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/admin/contactinfo',
                 element:<ContactInfos></ContactInfos>
+            },
+            {
+                path:'/dashboard/admin/allusers',
+                element:<ShowAllUsers></ShowAllUsers>
             }
         ]
     },
