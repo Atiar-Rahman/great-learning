@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
 
 const Category = ({ category }) => {
-    console.log(category)
+    // console.log(category)
     const {_id, file, title, rating } = category;
     return (
         <Link to={`course/${_id}`}>

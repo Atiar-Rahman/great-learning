@@ -36,6 +36,7 @@ import PaymentFail from '../pages/Payment/PaymentFail';
 import ShowAllUsers from '../pages/AdminDashBoard/ShowAllUsers';
 import Blogs from '../pages/Blog/Blogs';
 import ChatBoot from '../components/ChatBoot';
+import VedioUpload from '../components/VedioUpload';
 
 
 const router = createBrowserRouter([
@@ -141,6 +142,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/admin/addcource',
                 element:<AddCourse></AddCourse>
+            },
+            {
+                path:'/dashboard/admin/vedio',
+                element:<VedioUpload></VedioUpload>
             },
             {
                 path:'/dashboard/admin/updatecourse/:id',

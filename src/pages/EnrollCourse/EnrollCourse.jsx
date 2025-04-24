@@ -22,7 +22,7 @@ const course = useLoaderData();
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle enrollment logic here (e.g., submit form data to the backend)
-    alert("Enrollment successful!");
+    // alert("Enrollment successful!");
     formData.courseId = course._id;
     console.log(formData)
 

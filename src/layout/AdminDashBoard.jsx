@@ -23,6 +23,7 @@ const AdminDashBoard = () => {
                             <li><Link to={'/dashboard/admin/showinstructors'}><MdAddToPhotos />Show all instructors</Link></li>
                             <li><Link to={'/dashboard/admin/contactinfo'}><MdAddToPhotos />ContactInfo</Link></li>
                             <li><Link to={'/dashboard/admin/allusers'}><MdAddToPhotos />showalluser</Link></li>
+                            <li><Link to={'/dashboard/admin/vedio'}><MdAddToPhotos />course vedio upload</Link></li>
                         </ul>
                     </div>
                 </div>
