@@ -6,17 +6,17 @@ import AuthContext from '../context/AuthContext/AuthContext';
 import Setting from '../components/Setting';
 
 const Navbar = () => {
-    const { user,logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleSignout=e=>{
+    const handleSignout = e => {
         e.preventDefault;
         logOut()
-        .then(()=>{
+            .then(() => {
 
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 
@@ -28,6 +28,7 @@ const Navbar = () => {
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/myclass'}>My Classes</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/team'}>Show instructor</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/dashboard/student'}>Dashbord</NavLink>
+
 
     </>
     return (
@@ -54,6 +55,17 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                <NavLink
+                    className={({ isActive, isPending }) =>
+                        `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`
+                    }
+                    to={'/chat'}
+                >
+                    <button className="relative btn px-4 py-2 text-white bg-green-600 rounded-md overflow-hidden transition duration-300 ease-in-out hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300 group">
+                        <span className="z-10 relative">Chat with AI</span>
+                        <span className="absolute inset-0 border-2 border-green-400 rounded-md animate-pulse opacity-30 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
+                    </button>
+                </NavLink>
                 <div className='mr-4 btn btn-outline'>
                     {
                         user ? <>
@@ -68,7 +80,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="m-1"><div className="avatar">
                         <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring ring-offset-2">
                             {
-                                user?<><img src={user.photoURL} /></>:<><img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" /></>
+                                user ? <><img src={user.photoURL} /></> : <><img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" /></>
                             }
                         </div>
                     </div></div>
@@ -77,7 +89,7 @@ const Navbar = () => {
                         <li><NavLink to={'/blog'}>Blog tutorial</NavLink></li>
                         <li><NavLink to={'/setting'}>Setting</NavLink></li>
                         <Setting></Setting>
-                        
+
                     </ul>
                 </div>
 

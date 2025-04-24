@@ -35,6 +35,7 @@ import PaymentSuccess from '../pages/Payment/PaymentSuccess';
 import PaymentFail from '../pages/Payment/PaymentFail';
 import ShowAllUsers from '../pages/AdminDashBoard/ShowAllUsers';
 import Blogs from '../pages/Blog/Blogs';
+import ChatBoot from '../components/ChatBoot';
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path:'/team',
                 element:<Team></Team>
+            },
+            {
+                path:'/chat',
+                element:<ChatBoot></ChatBoot>
             },
             {
                 path:'/payment/success/:tranId',
