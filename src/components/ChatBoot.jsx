@@ -5,7 +5,7 @@ const ChatBoot = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const API_KEY = "AIzaSyBpmoOZrgy2IJZ3ThgT_h1mMuJMWWOk5Zg";
+ 
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -16,7 +16,7 @@ const ChatBoot = () => {
 
     try {
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${import.meta.env.VITE_API_KEY}`,
         {
           contents: [
             {
