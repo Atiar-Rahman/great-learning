@@ -28,6 +28,7 @@ const StudentDashBoard = () => {
                             {/* Sidebar content here */}
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/dashboard/student/profile'>Profile</Link></li>
+                            <li><Link to='/dashboard/student/gallary'>our Course</Link></li>
                             <li><button onClick={handleLogout}>LogOut</button></li>
                         </ul>
                     </div>

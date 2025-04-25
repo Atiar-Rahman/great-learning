@@ -10,8 +10,6 @@ import MainLayout from '../layout/MainLayout';
 import Login from '../pages/Login/Login';
 import AuthLayout from '../layout/AuthLayout';
 
-
-import MyClass from '../pages/MyClass/MyClass';
 import BlogLayout from '../layout/BlogLayout';
 import Register from '../pages/Register/Register';
 import Team from '../pages/Team/Team';
@@ -36,6 +34,7 @@ import PaymentFail from '../pages/Payment/PaymentFail';
 import ShowAllUsers from '../pages/AdminDashBoard/ShowAllUsers';
 import Blogs from '../pages/Blog/Blogs';
 import ChatBoot from '../components/ChatBoot';
+import VideoGallery from '../components/VideoGallery';
 
 
 const router = createBrowserRouter([
@@ -60,10 +59,6 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <AboutUs></AboutUs>
-            },
-            {
-                path:'/myclass',
-                element:<MyClass></MyClass>
             },
             {
                 path:'/team',
@@ -126,6 +121,9 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/student/profile',
                 element:<Profile></Profile>
+            },{
+                path:'/dashboard/student/gallary',
+                element:<VideoGallery></VideoGallery>
             }
         ]
     },
