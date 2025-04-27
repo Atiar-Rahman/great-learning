@@ -5,7 +5,7 @@ import AuthContext from '../context/AuthContext/AuthContext';
 const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-
+    console.log(location)
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-screen">
@@ -14,11 +14,11 @@ const PrivateRoutes = ({ children }) => {
         );
     }
 
-    if (user) {
+    if (user && user?.email) {
         return children;
     }
 
-    return <Navigate to="/auth/login" state={{ from: location }} replace />;
+    return <Navigate state={location.pathname}  to={"/auth/login"}  />;
 };
 
 export default PrivateRoutes;
