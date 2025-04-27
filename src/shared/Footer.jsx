@@ -3,6 +3,10 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+    };
     return (
         <footer>
             <div className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
@@ -31,11 +35,13 @@ const Footer = () => {
                     <fieldset className="w-80">
                         <label>Enter your email address</label>
                         <div className="join">
+                            <form onSubmit={handleSubscribe} action="">
                             <input
                                 type="text"
                                 placeholder="username@site.com"
                                 classclassName="input input-bordered join-item" />
-                            <button className="btn btn-primary join-item">Subscribe</button>
+                            <input type="submit" className="btn btn-primary join-item" value="Subscribe" />
+                            </form>
                         </div>
                     </fieldset>
                 </form>

@@ -48,7 +48,7 @@ const ChatBoot = () => {
   return (
     <div className="p-4  mx-auto">
       <h2 className="text-xl font-bold mb-4">ChatBoot</h2>
-      <div className="h-64 overflow-y-auto border p-2 mb-2 rounded shadow bg-white">
+      <div className="h-64 overflow-y-auto border p-2 mb-2 rounded shadow bg-white text-black">
         {messages.map((msg, index) => (
           <div
             key={index}
