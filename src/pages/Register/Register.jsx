@@ -11,6 +11,8 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa";
 import auth from '../../firebase/firebase.init';
 import { sendEmailVerification } from 'firebase/auth';
+import swal from 'sweetalert';
+
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState('')
@@ -47,7 +49,7 @@ const Register = () => {
             .then(result => {
                 //set verification email address
                 sendEmailVerification(auth.currentUser)
-                .then(console.log('verified email address'))
+                .then(swal('verified email address'))
 
                 // console.log(result.user);
                 if (result.user.uid) {
@@ -76,7 +78,7 @@ const Register = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                     })
             })
             .catch(err => {

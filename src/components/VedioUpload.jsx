@@ -53,7 +53,7 @@ const VideoUpload = () => {
         const form = e.target;
         const courseSelect = form.courseSelect.value;
         const courseVideo = { courseSelect, video }
-        console.log(courseVideo)
+        // console.log(courseVideo)
         axios.post(`${url}/video`, courseVideo)
             .then(function (response) {
                 if (response.data.insertedId) {

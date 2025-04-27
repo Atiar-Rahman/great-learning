@@ -53,7 +53,7 @@ const AddConstructor = () => {
         }
 
         // Submit form data
-        console.log(name, experience, instructor_type, education, description, file);
+        // console.log(name, experience, instructor_type, education, description, file);
         const instructorData = { name, experience, instructor_type, education, description, file };
         setError(''); // Clear error after successful form submission
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactInfo = ({ contact }) => {
-    console.log(contact)
+    // console.log(contact)
     const { name, email, text } = contact;
     return (
         <div>

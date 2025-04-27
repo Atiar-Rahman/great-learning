@@ -34,8 +34,9 @@ const SocialLogin = () => {
                     body: JSON.stringify(userData)
                 })
                     .then(res => res.json())
+                    // eslint-disable-next-line no-unused-vars
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                     })
             })
             .catch(error => {
