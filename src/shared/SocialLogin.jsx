@@ -2,9 +2,15 @@ import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext/AuthContext';
 import url from '../url';
 import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const { signInWithGoogle } = useContext(AuthContext);
+    const location = useLocation();
+    // console.log(location)
+
+    const navigate = useNavigate();
+
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
@@ -16,6 +22,7 @@ const SocialLogin = () => {
                         icon: "success"
                     });
                 }
+                navigate(location?.state? location.state:'/') //state thakle nevigate korbo na thakle  home page
                 const email = result.user.email
                 const lastSignInTime = result.user.metadata.lastSignInTime
                 const creationTime = result.user.metadata.creationTime

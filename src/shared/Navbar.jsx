@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/favicon.png';
 import { IoMenu } from "react-icons/io5";
 import AuthContext from '../context/AuthContext/AuthContext';
@@ -7,12 +7,15 @@ import Setting from '../components/Setting';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const location = useLocation();
+    // console.log(location)
 
+    const navigate = useNavigate();
     const handleSignout = e => {
         e.preventDefault;
         logOut()
             .then(() => {
-
+                navigate(location?.state? '/auth/login':'/') //state thakle nevigate korbo na thakle  home page
             })
             .catch(error => {
                 console.log(error);
