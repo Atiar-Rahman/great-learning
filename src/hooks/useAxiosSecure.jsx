@@ -8,7 +8,7 @@ const useAxiosSecure = () => {
 
   // Create an axios instance
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:3000', // Your API's base URL
+    baseURL: 'https://great-learning-server-six.vercel.app', // Your API's base URL
     withCredentials: true,  // Send cookies with every request (necessary for HttpOnly cookies)
   });
 

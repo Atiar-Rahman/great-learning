@@ -57,7 +57,7 @@ const AddConstructor = () => {
         const instructorData = { name, experience, instructor_type, education, description, file };
         setError(''); // Clear error after successful form submission
 
-        fetch('http://localhost:3000/instructor', {
+        fetch('https://great-learning-server-six.vercel.app/instructor', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

@@ -86,7 +86,7 @@ const AddCourse = () => {
 
         setError(''); // Clear error after successful form submission
 
-        fetch('http://localhost:3000/course', {
+        fetch('https://great-learning-server-six.vercel.app/course', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
