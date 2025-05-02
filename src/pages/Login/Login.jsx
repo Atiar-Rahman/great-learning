@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import auth from '../../firebase/firebase.init';
 import swal from 'sweetalert';
+import axios from 'axios';
+import url from '../../url';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -51,6 +53,12 @@ const Login = () => {
                         });
                     }
                 }
+
+                const user = {email:email};
+                axios.post(`${url}/jwt`,user,{withCredentials:true})
+                .then(res =>{
+                    console.log(res.data);
+                })
                 navigate(location?.state? location.state:'/') //state thakle nevigate korbo na thakle  home page
                 
                 

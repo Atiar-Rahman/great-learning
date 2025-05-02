@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import Category from './Category';
+import axios from 'axios';
+import url from '../../url';
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
 
-        fetch('http://localhost:3000/course')
-            .then(res => res.json())
-            .then(data => setCategories(data))
+        // fetch('http://localhost:3000/course')
+        //     .then(res => res.json())
+        //     .then(data => setCategories(data))
+
+        axios.get(`${url}/course`)
+        .then(res=>{
+            setCategories(res.data)
+        })
 
     }, [])
     return (

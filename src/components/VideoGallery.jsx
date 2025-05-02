@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import url from '../url';
+import axios from 'axios';
 
 const VideoGallery = () => {
   const { user } = useAuth();
@@ -12,10 +13,15 @@ const VideoGallery = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`${url}/videos?email=${email}`);
-      const data = await res.json();
+      // const res = await fetch(`${url}/videos?email=${email}`);
+      // const data = await res.json();
       // console.log(data);
-      setVideos(data); // ✅ Update videos state
+      // setVideos(data); // ✅ Update videos state
+
+      axios.get(`${url}/videos?email=${email}`,{withCredentials:true})
+      .then(res=>{
+        setVideos(res.data)
+      })
     } catch (err) {
       console.error('Failed to fetch videos:', err);
     } finally {
@@ -56,7 +62,7 @@ const VideoGallery = () => {
   };
 
   return (
-    <div className="w[200px] md:w-[500px] lg:w-[1000px] mx-auto p-6 border">
+    <div className="w[500px] md:w-[700px] lg:w-[1000px] mx-auto p-6 border">
       {loading && <p className="text-gray-600">Loading...</p>}
 
       {!loading && videos.length === 0 && (

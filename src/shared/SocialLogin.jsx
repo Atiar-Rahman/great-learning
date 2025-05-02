@@ -3,6 +3,7 @@ import AuthContext from '../context/AuthContext/AuthContext';
 import url from '../url';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SocialLogin = () => {
     const { signInWithGoogle } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const SocialLogin = () => {
                         icon: "success"
                     });
                 }
-                navigate(location?.state? location.state:'/') //state thakle nevigate korbo na thakle  home page
+                navigate(location?.state ? location.state : '/') //state thakle nevigate korbo na thakle  home page
                 const email = result.user.email
                 const lastSignInTime = result.user.metadata.lastSignInTime
                 const creationTime = result.user.metadata.creationTime
@@ -31,7 +32,7 @@ const SocialLogin = () => {
 
 
                 const userData = {
-                    email, lastSignInTime, creationTime, photourl, displayName
+                    email, lastSignInTime, creationTime, photourl, displayName,role:'user'
                 }
                 fetch(`${url}/users`, {
                     method: 'POST',
@@ -41,8 +42,12 @@ const SocialLogin = () => {
                     body: JSON.stringify(userData)
                 })
                     .then(res => res.json())
-                    // eslint-disable-next-line no-unused-vars
                     .then(data => {
+                        const user = { email: data.user.email };
+                        axios.post(`${url}/jwt`, user, { withCredentials: true })
+                            .then(res => {
+                                console.log(res.data);
+                            })
                         // console.log(data)
                     })
             })

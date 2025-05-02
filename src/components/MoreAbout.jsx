@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 const MoreAbout = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
+        <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-10'>
             <div className='flex flex-1 gap-4'>
                 <img src={about1} alt="" />
                 <div className='flex flex-col gap-3'>

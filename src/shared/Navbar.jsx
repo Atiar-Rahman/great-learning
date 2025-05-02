@@ -29,7 +29,9 @@ const Navbar = () => {
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/contact'}>Contact</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/courses'}>Courses Syllabus</NavLink>
         <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/team'}>Show instructor</NavLink>
-        <NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/dashboard/student'}>Dashbord</NavLink>
+        {
+            user?<NavLink className={({ isActive, isPending }) => `mr-3 ${isPending ? "" : isActive ? "border-b-4 text-red-400" : ""}`} to={'/dashboard/student'}>Dashbord</NavLink>:""
+        }
 
 
     </>
@@ -87,7 +89,9 @@ const Navbar = () => {
                         </div>
                     </div></div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
-                        <li><NavLink to={'/dashboard/student'}>DashBoard</NavLink></li>
+                        {
+                            user?<li><NavLink to={'/dashboard/student'}>DashBoard</NavLink></li>:""
+                        }
                         <li><NavLink to={'/blog'}>Blog tutorial</NavLink></li>
                         <li><NavLink to={'/setting'}>Setting</NavLink></li>
                         <Setting></Setting>

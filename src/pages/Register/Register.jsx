@@ -67,7 +67,7 @@ const Register = () => {
 
 
                 const userData = {
-                    email, lastSignInTime, creationTime, photourl, displayName
+                    email, lastSignInTime, creationTime, photourl, displayName,role:'user'
                 }
                 fetch(`${url}/users`, {
                     method: 'POST',

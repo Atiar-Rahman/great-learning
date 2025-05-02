@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
 import { IoMenuSharp } from 'react-icons/io5';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext/AuthContext';
 
 const StudentDashBoard = () => {
     const {logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogout=()=>{
         logOut()
-        .then()
+        .then(()=>{
+            navigate('/auth/login');//redirectly programatically
+        })
         .catch(err=>{
             console.log(err)
         })
