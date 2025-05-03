@@ -7,12 +7,17 @@ const Categories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
 
-        // fetch('http://localhost:3000/course')
+        // fetch('https://great-learning-server-six.vercel.app/course')
         //     .then(res => res.json())
-        //     .then(data => setCategories(data))
+        //     .then(data => {
+        //         setCategories(data)
+        //         console.log(data)
+        //     })
 
         axios.get(`${url}/course`)
+        // axios.get('https://great-learning-server-six.vercel.app/course')
         .then(res=>{
+            // console.log(res.data)
             setCategories(res.data)
         })
 

@@ -1,22 +1,14 @@
+// components/AdminDashBoard.js
 import React from 'react';
 import { IoMenuSharp } from 'react-icons/io5';
 import { Link, Outlet } from 'react-router-dom';
 import { MdAddToPhotos } from "react-icons/md";
-import useAdmin from '../hooks/useAdmin';
 
 const AdminDashBoard = () => {
-  const [isAdmin, isAdminLoading] = useAdmin();
 
-  if (isAdminLoading) {
-    return <div className="text-center mt-10 text-lg font-semibold">Loading admin dashboard...</div>;
-  }
-
-  if (!isAdmin) {
-    return <div className="text-center mt-10 text-red-600 text-lg font-semibold">Access Denied. You are not an admin.</div>;
-  }
 
   return (
-    <div className='flex flex-col md:flex-row gap-5'>
+    <div className="flex flex-col md:flex-row gap-5">
       <div>
         <div className="drawer z-10">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -41,7 +33,7 @@ const AdminDashBoard = () => {
           </div>
         </div>
       </div>
-      <div className='w-3/4 mx-auto'>
+      <div className="w-3/4 mx-auto">
         <Outlet />
       </div>
     </div>

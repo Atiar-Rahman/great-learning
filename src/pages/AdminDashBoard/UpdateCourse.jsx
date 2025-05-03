@@ -39,8 +39,10 @@ const UpdateCourse = () => {
             });
 
             const uploadedImage = await res.json();
-            setFile(uploadedImage.url);
-            setImagePreview(URL.createObjectURL(selectedFile));
+            setFile(uploadedImage.secure_url);
+        
+            setImagePreview(uploadedImage.secure_url);
+
         } catch (err) {
             console.error(err);
             setError('Failed to upload image. Please try again.');

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Instructor from '../../components/Instructor';
+import url from '../../url';
 
 const ShowAllInstructor = () => {
     const [instructors,setInstructors] = useState([]);
 
     useEffect(()=>{
-        fetch('https://great-learning-server-six.vercel.app/instructor')
+        fetch(`${url}/instructor`)
         .then(res=>res.json())
         .then(data=>{
             setInstructors(data)

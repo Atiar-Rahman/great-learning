@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Blog from './Blog';
+import url from '../../url';
 
 const Blogs = () => {
     const [blogs,setBlogs] = useState([]);
 
     useEffect(()=>{
-        fetch('/public/python_basic_qa_100 (2).json')
+        fetch(`${url}/pythonbasic`)
         .then(res=>res.json())
         .then(data=>{
+            console.log(data)
             setBlogs(data)
         })
     },[])

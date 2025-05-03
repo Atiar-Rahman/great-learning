@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import url from '../../url';
 
 const AddCourse = () => {
     const [file, setFile] = useState('');
@@ -30,8 +31,8 @@ const AddCourse = () => {
             });
 
             const uploadedImage = await res.json();
-            setFile(uploadedImage.url);
-            setImagePreview(URL.createObjectURL(selectedFile)); // Show preview
+            setFile(uploadedImage.secure_url);
+            setImagePreview(uploadedImage.secure_url); // Show preview
         } catch (err) {
             setError('Failed to upload image. Please try again.', err);
         }
@@ -86,7 +87,7 @@ const AddCourse = () => {
 
         setError(''); // Clear error after successful form submission
 
-        fetch('https://great-learning-server-six.vercel.app/course', {
+        fetch(`${url}/course`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

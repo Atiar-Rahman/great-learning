@@ -38,8 +38,8 @@ const UpdateInstructor = () => {
                 body: data,
             });
             const uploadedImage = await res.json();
-            setFile(uploadedImage.url);
-            setImagePreview(uploadedImage.url);
+            setFile(uploadedImage.secure_url);
+            setImagePreview(uploadedImage.secure_url);
         } catch (err) {
             console.error(err);
             setError('Failed to upload image. Please try again.');

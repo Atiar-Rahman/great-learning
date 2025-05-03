@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Sylebus from './Sylebus';
+import url from '../../url';
 
 const Courses = () => {
     const [sylebus,setSylebus] = useState([]);
 
     useEffect(()=>{
-        fetch('../../../public/sylebus.json')
+        fetch(`${url}/syllabus`)
         .then(res=>res.json())
         .then(data=>{
+            console.log(data)
             setSylebus(data);
         })
     },[])

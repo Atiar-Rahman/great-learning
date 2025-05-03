@@ -6,41 +6,30 @@ const useAxiosSecure = () => {
   const navigate = useNavigate();
   const { logOut } = useAuth();
 
-  // Create an axios instance
   const axiosSecure = axios.create({
-    baseURL: 'https://great-learning-server-six.vercel.app', // Your API's base URL
-    withCredentials: true,  // Send cookies with every request (necessary for HttpOnly cookies)
+    baseURL: 'https://great-learning-server-atiars-projects-57624e75.vercel.app',
+    withCredentials: true, // ✅ Ensure cookies are sent automatically
   });
 
-  // Set up the request interceptor
+  // Request interceptor — NO token manually attached
   axiosSecure.interceptors.request.use(
-    (config) => {
-      // No need to add token to headers manually since the HttpOnly cookie will be sent automatically
-      return config;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
+    (config) => config,
+    (error) => Promise.reject(error)
   );
 
-  // Set up the response interceptor to handle 401 or 403 errors
+  // Response interceptor for handling 401 and 403 errors
   axiosSecure.interceptors.response.use(
     (response) => response,
     async (error) => {
-      if (error.response?.status === 401 || error.response?.status === 403) {
-        // If the user is unauthorized or forbidden, log out the user
+      const status = error.response?.status;
 
-        // Call the logOut function from useAuth
+      if (status === 401) {
         await logOut();
-
-        // Optionally, remove cookies manually (if your backend doesn't invalidate them automatically)
-        // For HttpOnly cookies, this will not work as the cookies are managed by the browser
-        // However, if your backend offers a logout endpoint, you can call it to invalidate the token
-        // await axios.post('/logout'); // Uncomment if your backend has a logout endpoint
-
-        // Redirect to the login page
         navigate('/auth/login');
+      } else if (status === 403) {
+        navigate('/unauthorized'); // Ensure this route exists in your frontend
       }
+
       return Promise.reject(error);
     }
   );
