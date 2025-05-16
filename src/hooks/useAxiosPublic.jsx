@@ -1,16 +1,13 @@
 import axios from 'axios';
 
-// Create a custom hook for Axios public API requests
 const useAxiosPublic = () => {
-    // Get token from localStorage, sessionStorage, or cookies (depending on where you store it)
-    const token = localStorage.getItem('authToken');  // Replace with your token storage method
-
     const axiosInstance = axios.create({
-        baseURL: 'https://great-learning-server-atiars-projects-57624e75.vercel.app', // replace with your actual API base URL
+        baseURL: 'https://great-learning-server-atiars-projects-57624e75.vercel.app', // Your API base URL
+        // baseURL: 'http://localhost:3000', // Your API base URL
+        withCredentials: true, // 👈 Ensures cookies are sent with each request
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: token ? `Bearer ${token}` : '', // Add the token to Authorization header if available
-        },
+            'Content-Type': 'application/json'
+        }
     });
 
     return axiosInstance;

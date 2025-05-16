@@ -8,6 +8,7 @@ const useAxiosSecure = () => {
 
   const axiosSecure = axios.create({
     baseURL: 'https://great-learning-server-atiars-projects-57624e75.vercel.app',
+    // baseURL: 'http://localhost:3000',
     withCredentials: true, // ✅ Ensure cookies are sent automatically
   });
 

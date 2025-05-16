@@ -1,81 +1,81 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import User from '../../components/User';
+import url from '../../url';
+
+// 👉 Create a dedicated axios instance so ALL requests automatically carry cookies.
+//    This avoids accidentally losing credentials when you add new calls later on.
+const api = axios.create({
+  baseURL: url,
+  withCredentials: true, // always send Http‑Only cookies
+});
 
 const ShowAllUsers = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                if (!token) {
-                    throw new Error('Authentication token not found');
-                }
+  const fetchUsers = async () => {
+    setLoading(true);
+    setError('');
 
-                const response = await fetch('https://great-learning-server-atiars-projects-57624e75.vercel.app/users', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                    },
-                });
+    try {
+      const { data } = await api.get('/users');
+      setUsers(data);
+    } catch (err) {
+      console.error('Error fetching users:', err);
 
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Failed to fetch users: ${errorText}`);
-                }
-
-                const data = await response.json();
-                setUsers(data);
-                setLoading(false);
-            } catch (err) {
-                console.error('Error fetching users:', err);
-                setError(err.message || 'Failed to load users');
-                setLoading(false);
-            }
-        };
-
-        fetchUsers();
-    }, []);
-
-    if (loading) {
-        return <div className="text-center my-10">Loading...</div>;
+      /*
+        Backend returns 401 { message: 'token not provided' } when the cookie
+        never arrives (common on production HTTPS without SameSite=None; Secure).
+      */
+      setError(
+        err.response?.data?.message || err.message || 'Failed to fetch users.'
+      );
+    } finally {
+      setLoading(false);
     }
+  };
 
-    if (error) {
-        return <div className="text-center my-10 text-red-500">{error}</div>;
-    }
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
-    return (
-        <div>
-            <h1 className="text-3xl text-center my-10 font-bold">Show All Users</h1>
-            <table className="table w-full border">
-                <thead>
-                    <tr>
-                        <th className="border px-4 py-2">Photo</th>
-                        <th className="border px-4 py-2">Name</th>
-                        <th className="border px-4 py-2">Email</th>
-                        <th className="border px-4 py-2">Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.length > 0 ? (
-                        users.map((user) => (
-                            <User key={user._id} user={user} />
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan="4" className="text-center py-4">
-                                No users found
-                            </td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        </div>
-    );
+  return (
+    <div className="max-w-6xl mx-auto p-4">
+      <h1 className="text-3xl text-center my-10 font-bold">All Users</h1>
+
+      {loading && <p className="text-center text-gray-500">Loading…</p>}
+      {error && (
+        <p className="text-center text-red-500 mb-4 font-medium">{error}</p>
+      )}
+
+      <table className="table w-full border-collapse border">
+        <thead>
+          <tr>
+            <th className="border px-4 py-2">Photo</th>
+            <th className="border px-4 py-2">Name</th>
+            <th className="border px-4 py-2">Email</th>
+            <th className="border px-4 py-2">Role</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {!loading && users.length === 0 && !error && (
+            <tr>
+              <td colSpan="4" className="text-center py-4 text-gray-500">
+                No users found
+              </td>
+            </tr>
+          )}
+
+          {users.map((user) => (
+            <User key={user._id} user={user} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default ShowAllUsers;

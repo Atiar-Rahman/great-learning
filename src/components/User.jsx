@@ -16,7 +16,9 @@ const User = ({ user }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`${url}/users/${id}`)
+        axios.delete(`${url}/users/${id}`,{
+        withCredentials: true,
+      })
           .then(res => {
             if (res.data.deletedCount > 0) {
               Swal.fire({
@@ -34,7 +36,19 @@ const User = ({ user }) => {
   };
 
   const handleMakeAdmin = id => {
-    axios.patch(`${url}/users/admin/${id}`)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, admin!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.patch(`${url}/users/admin/${id}`,{
+        withCredentials: true,
+      })
       .then(res => {
         if (res.data.modifiedCount > 0) {
           Swal.fire({
@@ -49,6 +63,9 @@ const User = ({ user }) => {
       .catch(err => {
         console.error("Failed to make admin:", err);
       });
+      }
+    });
+    
   };
 
   return (

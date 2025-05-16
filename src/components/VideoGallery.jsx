@@ -13,15 +13,10 @@ const VideoGallery = () => {
 
     setLoading(true);
     try {
-      // const res = await fetch(`${url}/videos?email=${email}`);
-      // const data = await res.json();
-      // console.log(data);
-      // setVideos(data); // ✅ Update videos state
-
-      axios.get(`${url}/videos?email=${email}`,{withCredentials:true})
-      .then(res=>{
-        setVideos(res.data)
-      })
+      const res = await axios.get(`${url}/videos?email=${email}`, {
+        withCredentials: true,
+      });
+      setVideos(res.data);
     } catch (err) {
       console.error('Failed to fetch videos:', err);
     } finally {
@@ -35,13 +30,10 @@ const VideoGallery = () => {
     }
   }, [user]);
 
-  // Group videos by course
   const groupVideosByCourse = () => {
     return videos.reduce((acc, video) => {
-      const course = video.courseSelect;  // Assuming this field contains course name
-      if (!acc[course]) {
-        acc[course] = [];
-      }
+      const course = video.courseSelect || 'Uncategorized';
+      if (!acc[course]) acc[course] = [];
       acc[course].push(video);
       return acc;
     }, {});
@@ -52,17 +44,17 @@ const VideoGallery = () => {
   const handleFullscreen = (videoElement) => {
     if (videoElement.requestFullscreen) {
       videoElement.requestFullscreen();
-    } else if (videoElement.mozRequestFullScreen) { // Firefox
+    } else if (videoElement.mozRequestFullScreen) {
       videoElement.mozRequestFullScreen();
-    } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+    } else if (videoElement.webkitRequestFullscreen) {
       videoElement.webkitRequestFullscreen();
-    } else if (videoElement.msRequestFullscreen) { // IE/Edge
+    } else if (videoElement.msRequestFullscreen) {
       videoElement.msRequestFullscreen();
     }
   };
 
   return (
-    <div className="w[500px] md:w-[700px] lg:w-[1000px] mx-auto p-6 border">
+    <div className="w-[400px] md:w-[700px] lg:w-[1000px] mx-auto p-6 border">
       {loading && <p className="text-gray-600">Loading...</p>}
 
       {!loading && videos.length === 0 && (
@@ -81,10 +73,12 @@ const VideoGallery = () => {
                       controls
                       src={video.video}
                       className="w-full rounded shadow"
-                      id={`video-${index}`}
+                      id={`video-${i}-${index}`}
                     />
                     <button
-                      onClick={() => handleFullscreen(document.getElementById(`video-${index}`))}
+                      onClick={() =>
+                        handleFullscreen(document.getElementById(`video-${i}-${index}`))
+                      }
                       className="absolute top-2 right-2 bg-black text-white px-2 py-1 rounded-md opacity-75 hover:opacity-100 transition-opacity"
                     >
                       Fullscreen
